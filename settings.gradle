@@ -1,0 +1,19 @@
+pluginManagement {
+    plugins {
+        id "com.android.library" version "4.0.1"
+        id "org.jetbrains.kotlin.android" version "1.4.10"
+        id "org.jetbrains.kotlin.jvm" version "1.4.10"
+    }
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id.contains("com.android")) {
+                useModule("com.android.tools.build:gradle:4.0.1")
+            }
+        }
+    }
+}
+include ':libA', ':libB'
